@@ -35,9 +35,9 @@ app.use("/api/message", messageRoute);
 if (process.env.NODE_ENV === "production") {
     const dirPath = path.resolve();
     app.use(express.static("./client/dist"));
-   app.get("*", (req, res) => { 
+    app.get("*", (req, res) => {
         res.sendFile(path.resolve(dirPath, './client/dist', 'index.html'));
-    } );
+    });
 }
 
 server.listen(PORT, () => {
